@@ -1,242 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineWed Studio | Luxury Cinematic Indian Wedding Films</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<title>CineWed Studio | Cinematic Wedding Films</title>
+    <style>
+        :root {
+            --blush: #FFF5F7;
+            --ivory: #FFFCF9;
+            --rose-gold: #E4B1B1;
+            --champagne: #C5A059;
+            --deep-royal: #4A3B3B;
+        }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--ivory); color: var(--deep-royal); scroll-behavior: smooth; }
+        h1, h2, h3, .royal-font { font-family: 'Playfair Display', serif; }
+        .cinzel { font-family: 'Cinzel', serif; }
+        
+        /* Custom Colors */
+        .bg-blush { background-color: var(--blush); }
+        .text-gold { color: var(--champagne); }
+        .bg-gold { background-color: var(--champagne); }
+        .border-gold { border-color: var(--champagne); }
+        
+        .nav-glass { backdrop-filter: blur(20px); background: rgba(255, 252, 249, 0.8); }
+        
+        .hero-img {
+            background: linear-gradient(rgba(255, 252, 249, 0.1), rgba(255, 252, 249, 0.4)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Montserrat',sans-serif;
-  background:#ffffff;
-  color:#111;
-  line-height:1.7;
-}
-section{padding:120px 6%}
-h1,h2,h3,h4{
-  font-family:'Cormorant Garamond',serif;
-  letter-spacing:1px;
-}
-img{width:100%;display:block}
-a{text-decoration:none;color:inherit}
-
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:25px 6%;
-  background:rgba(0,0,0,.6);
-  backdrop-filter:blur(8px);
-  display:flex;
-  justify-content:space-between;
-  z-index:999;
-}
-nav h2{color:#fff}
-nav ul{list-style:none;display:flex;gap:30px}
-nav li{color:#fff;font-size:13px;letter-spacing:2px}
-
-/* HERO */
-.hero{
-  height:100vh;
-  background:url('https://images.unsplash.com/photo-1606216794074-735e91aa2c92') center/cover;
-  position:relative;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.55);
-}
-.hero-content{
-  position:relative;
-  z-index:2;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#fff;
-}
-.hero-content span{
-  font-family:'Great Vibes',cursive;
-  font-size:46px;
-  color:#d4af37;
-}
-.hero-content h1{
-  font-size:72px;
-  margin:10px 0;
-}
-.hero-content p{
-  max-width:700px;
-  font-size:16px;
-}
-
-/* ABOUT */
-.about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-}
-.about h2{font-size:52px;margin-bottom:20px}
-
-/* IMAGE GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-}
-.grid img{
-  height:420px;
-  object-fit:cover;
-  box-shadow:0 25px 50px rgba(0,0,0,.15);
-}
-
-/* STRIP */
-.strip{
-  height:70vh;
-  background:url('https://images.unsplash.com/photo-1520857014576-2c4f4c972b57') center/cover fixed;
-  position:relative;
-}
-.strip::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.6);
-}
-.strip h2{
-  position:relative;
-  z-index:2;
-  color:#fff;
-  text-align:center;
-  font-size:60px;
-  top:50%;
-  transform:translateY(-50%);
-}
-
-/* SERVICES */
-.services{background:#111;color:#fff}
-.services h2{text-align:center;font-size:54px;margin-bottom:70px}
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-}
-.service{
-  border:1px solid rgba(255,255,255,.2);
-  padding:40px;
-}
-
-/* BIG GALLERY */
-.big-gallery img{
-  height:500px;
-  object-fit:cover;
-}
-
-/* CONTACT */
-.contact{
-  background:#000;
-  color:#fff;
-  text-align:center;
-}
-.contact h2{font-size:52px;margin-bottom:20px}
-
-/* FOOTER */
-footer{
-  background:#000;
-  color:#aaa;
-  text-align:center;
-  padding:40px;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .about{grid-template-columns:1fr}
-  .hero-content h1{font-size:46px}
-}
-</style>
+        .img-zoom { transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1); }
+        .portfolio-card:hover .img-zoom { transform: scale(1.08); }
+        
+        .gold-button {
+            background: linear-gradient(135deg, #C5A059 0%, #E4B1B1 100%);
+            transition: 0.4s ease;
+        }
+        .gold-button:hover { opacity: 0.9; transform: translateY(-2px); }
+    </style>
 </head>
+<body class="overflow-x-hidden">
 
-<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center nav-glass border-b border-pink-100">
+        <div class="text-2xl cinzel font-bold tracking-[0.2em]">CINEWED <span class="text-gold">STUDIO</span></div>
+        <div class="hidden lg:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-bold opacity-70">
+            <a href="#about" class="hover:text-gold transition">Our Story</a>
+            <a href="#portfolio" class="hover:text-gold transition">The Gallery</a>
+            <a href="#services" class="hover:text-gold transition">Offerings</a>
+            <a href="#contact" class="hover:text-gold transition">Inquiry</a>
+        </div>
+        <a href="https://wa.me/919934070091" class="gold-button text-white px-8 py-3 text-[10px] font-bold uppercase tracking-widest rounded-full shadow-lg">Reserve Date</a>
+    </nav>
 
-<nav>
-<h2>CINEWED STUDIO</h2>
-<ul>
-<li>Home</li>
-<li>About</li>
-<li>Work</li>
-<li>Services</li>
-<li>Contact</li>
-</ul>
-</nav>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center px-4 hero-img">
+        <div class="relative z-10" data-aos="zoom-out" data-aos-duration="2000">
+            <h2 class="text-xs md:text-sm tracking-[0.6em] uppercase mb-6 opacity-80">Capturing Timeless Love</h2>
+            <h1 class="text-5xl md:text-8xl mb-10 text-gray-900 leading-tight">Luxury Cinematic <br><span class="italic font-serif text-gold">Indian Wedding Films</span></h1>
+            <div class="flex justify-center items-center gap-6">
+                <div class="h-[1px] w-12 bg-gold"></div>
+                <p class="tracking-[0.3em] text-[11px] uppercase font-bold">BharatKhand, Bihar</p>
+                <div class="h-[1px] w-12 bg-gold"></div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
-<div class="hero-content">
-<span>Cinematic Wedding Films</span>
-<h1>Your Love, Our Cinema</h1>
-<p>Luxury Indian wedding films crafted with emotion, storytelling and cinematic depth.</p>
-</div>
-</section>
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 bg-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20">
+            <div class="md:w-1/2 relative" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1610173827002-62c0f1f05d04?q=80&w=800&auto=format&fit=crop" class="rounded-t-full border-[20px] border-[#FFF5F7] shadow-2xl relative z-10" alt="Indian Bride">
+                <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-blush rounded-full -z-0"></div>
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left">
+                <h2 class="text-4xl md:text-6xl mb-10 leading-tight">Capturing Every <br><span class="italic text-gold font-serif">Royal Moment</span></h2>
+                <p class="text-lg leading-relaxed text-gray-600 font-light mb-8 italic">
+                    CineWed Studio is a Luxury Cinematic Wedding Film and Photography Brand based in BharatKhand, Bihar.
+                </p>
+                <p class="text-md leading-relaxed text-gray-500 mb-8 uppercase tracking-widest text-xs font-bold">
+                    Our work reflects the grandeur of Indian weddings with emotional storytelling and cinematic visuals. Every frame is crafted to feel timeless, royal, and deeply emotional.
+                </p>
+                <a href="#portfolio" class="inline-block border-b-2 border-gold pb-2 text-xs font-bold uppercase tracking-widest hover:text-gold transition">Explore The Work</a>
+            </div>
+        </div>
+    </section>
 
-<section class="about">
-<div>
-<h2>About CineWed</h2>
-<p>CineWed Studio Is A Premium Cinematic Wedding Film Brand Based In Bihar. We Believe Every Wedding Is A Story Worth Filming Like A Movie.</p>
-<p>We Focus On Real Emotions, Grand Visuals And Timeless Storytelling.</p>
-</div>
-<img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff">
-</section>
+    <!-- Portfolio Gallery -->
+    <section id="portfolio" class="py-24 px-4 bg-blush">
+        <div class="text-center mb-24">
+            <h2 class="text-5xl mb-4 italic cinzel">The Masterpieces</h2>
+            <p class="tracking-[0.5em] uppercase text-[10px] text-gold font-black">100% Pure Indian Traditions</p>
+        </div>
 
-<section>
-<h2 style="text-align:center;font-size:54px;margin-bottom:60px">Wedding Moments</h2>
-<div class="grid">
-<img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2">
-<img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92">
-<img src="https://images.unsplash.com/photo-1601482441062-b9f13131f33a">
-<img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9">
-<img src="https://images.unsplash.com/photo-1600359746315-119f7b52b21c">
-<img src="https://images.unsplash.com/photo-1601482441057-1d3c5b3f35a2">
-</div>
-</section>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- 9 Sections with specific high-res Indian wedding IDs -->
+            
+            <!-- Haldi -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1642177583624-942699665955?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">Haldi</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Colors of Tradition</p>
+                </div>
+            </div>
 
-<div class="strip">
-<h2>We Do Not Shoot Weddings<br>We Create Cinema</h2>
-</div>
+            <!-- Mehendi -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1595981267035-7b04ec82389e?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">Mehendi</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Art In Every Detail</p>
+                </div>
+            </div>
 
-<section class="services">
-<h2>Our Services</h2>
-<div class="service-grid">
-<div class="service"><h3>Cinematic Wedding Films</h3><p>Emotion Driven Feature Length Wedding Movies.</p></div>
-<div class="service"><h3>Pre Wedding Shoots</h3><p>Concept Based Luxury Pre Wedding Films.</p></div>
-<div class="service"><h3>Photography</h3><p>Editorial And Candid Wedding Photography.</p></div>
-<div class="service"><h3>Instagram Reels</h3><p>High Impact Cinematic Reels For Social Media.</p></div>
-</div>
-</section>
+            <!-- Bride Portraits -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1632237000523-774f76269661?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">Bride Portraits</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Grace & Elegance</p>
+                </div>
+            </div>
 
-<section class="big-gallery">
-<h2 style="text-align:center;font-size:54px;margin-bottom:60px">Grand Celebrations</h2>
-<div class="grid">
-<img src="https://images.unsplash.com/photo-1542044896530-05d85be9b11f">
-<img src="https://images.unsplash.com/photo-1520857014576-2c4f4c972b57">
-<img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65">
-<img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a">
-</div>
-</section>
+            <!-- Groom Moments -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1615887133385-996895331600?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">Groom Moments</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Royal Presence</p>
+                </div>
+            </div>
 
-<section class="contact">
-<h2>Book Your Wedding</h2>
-<p>Bharatkhand, Bihar</p>
-<p>Phone: 9934070091 | 7319933202</p>
-</section>
+            <!-- Couple Portraits -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">Eternal Love</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Couple Portraits</p>
+                </div>
+            </div>
 
-<footer>
-© 2026 CineWed Studio • Cinematic Wedding Films
-</footer>
+            <!-- Pheras -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">Sacred Pheras</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Eternal Promises</p>
+                </div>
+            </div>
+            
+            <!-- Vidaai -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1544070282-591d487abc53?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">Vidaai</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Pure Emotion</p>
+                </div>
+            </div>
+            
+            <!-- Family Rituals -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1519225495810-75178319a11b?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">Family & Rituals</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Heart Of Indian Weddings</p>
+                </div>
+            </div>
+            
+            <!-- Baraat -->
+            <div class="portfolio-card group relative overflow-hidden rounded-3xl shadow-xl h-[500px]" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop" class="img-zoom w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition flex flex-col justify-end p-10 text-white">
+                    <h3 class="text-2xl font-serif italic mb-2">The Baraat</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-80">Energy & Celebration</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Services -->
+    <section id="services" class="py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-5xl mb-12 italic">Our <span class="text-gold">Services</span></h2>
+                <div class="space-y-10">
+                    <div class="flex gap-8 group">
+                        <div class="h-12 w-12 rounded-full border border-gold flex items-center justify-center text-gold font-bold group-hover:bg-gold group-hover:text-white transition">1</div>
+                        <div>
+                            <h4 class="text-lg font-bold uppercase tracking-widest mb-2">Cinematic Wedding Films</h4>
+                            <p class="text-gray-500 text-sm">Experience your wedding like a Bollywood masterpiece.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 group">
+                        <div class="h-12 w-12 rounded-full border border-gold flex items-center justify-center text-gold font-bold group-hover:bg-gold group-hover:text-white transition">2</div>
+                        <div>
+                            <h4 class="text-lg font-bold uppercase tracking-widest mb-2">Luxury Candid Photography</h4>
+                            <p class="text-gray-500 text-sm">Capturing the soul of your celebrations in still frames.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 group">
+                        <div class="h-12 w-12 rounded-full border border-gold flex items-center justify-center text-gold font-bold group-hover:bg-gold group-hover:text-white transition">3</div>
+                        <div>
+                            <h4 class="text-lg font-bold uppercase tracking-widest mb-2">Pre-Wedding Films</h4>
+                            <p class="text-gray-500 text-sm">Stylized storytelling in breathtaking heritage locations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop" class="rounded-2xl shadow-xl mt-12">
+                <img src="https://images.unsplash.com/photo-1595981267035-7b04ec82389e?q=80&w=600&auto=format&fit=crop" class="rounded-2xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 bg-blush">
+        <div class="max-w-4xl mx-auto text-center px-6" data-aos="zoom-in">
+            <h2 class="text-xs tracking-[0.5em] uppercase text-gold font-bold mb-10">Kind Words</h2>
+            <p class="text-3xl md:text-4xl italic text-gray-700 leading-relaxed mb-12">
+                "Our wedding film felt like a Bollywood movie. Every Indian ritual was captured with so much emotion and beauty. Best cinematic wedding team in Bihar."
+            </p>
+            <div class="h-[1px] w-20 bg-gold mx-auto mb-6"></div>
+            <h4 class="font-bold uppercase tracking-widest text-[10px]">Priya & Rahul Singh</h4>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-32 px-6 bg-white border-t border-pink-50">
+        <div class="max-w-6xl mx-auto bg-blush rounded-[3rem] p-12 md:p-24 flex flex-col md:flex-row gap-20 items-center shadow-xl">
+            <div class="md:w-1/2">
+                <h2 class="text-5xl cinzel mb-8">Let's Create <br><span class="italic text-gold">Magic</span></h2>
+                <div class="space-y-6 text-sm font-bold uppercase tracking-widest opacity-80">
+                    <p><i class="fa fa-map-marker-alt mr-4 text-gold"></i> BharatKhand, Bihar, India</p>
+                    <p><i class="fa fa-phone mr-4 text-gold"></i> +91 99340 70091</p>
+                    <p><i class="fab fa-instagram mr-4 text-gold"></i> @cinewedstudio</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 w-full space-y-4">
+                <a href="https://wa.me/919934070091" class="gold-button w-full flex items-center justify-center gap-4 text-white py-6 rounded-2xl font-bold uppercase tracking-widest shadow-xl">
+                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp Inquiry
+                </a>
+                <p class="text-center text-[10px] uppercase tracking-widest opacity-50">Available for weddings across India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-[10px] uppercase tracking-[0.4em] opacity-40">
+        <p>&copy; 2026 CineWed Studio | Capturing Love Stories With A Cinematic Touch</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1200, once: true });
+    </script>
 </body>
 </html>
