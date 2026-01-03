@@ -6,97 +6,51 @@
 
 <title>CineWed Studio | Cinematic Wedding Films</title>
 
-<!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-<!-- ICONS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
-
-/* ================= RESET ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Montserrat',sans-serif;
   background:#ffffff;
   color:#111;
-  overflow-x:hidden;
+  line-height:1.7;
 }
-a{text-decoration:none;color:inherit;}
-img{max-width:100%;display:block;}
-
-/* ================= GLOBAL ================= */
-section{padding:120px 6%;}
+section{padding:120px 6%}
 h1,h2,h3,h4{
   font-family:'Cormorant Garamond',serif;
+  letter-spacing:1px;
 }
-.gold{color:#c9a44b;}
-.btn{
-  padding:14px 34px;
-  border:1px solid #c9a44b;
-  display:inline-block;
-  letter-spacing:2px;
-  transition:.4s;
-}
-.btn:hover{
-  background:#c9a44b;
-  color:#fff;
-}
+img{width:100%;display:block}
+a{text-decoration:none;color:inherit}
 
-/* ================= NAVBAR ================= */
+/* NAV */
 nav{
   position:fixed;
   top:0;
-  left:0;
   width:100%;
-  z-index:999;
   padding:25px 6%;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(8px);
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  background:rgba(0,0,0,.35);
-  backdrop-filter:blur(8px);
+  z-index:999;
 }
-nav .logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:28px;
-  letter-spacing:2px;
-  color:#fff;
-}
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:30px;
-}
-nav ul li{
-  color:#fff;
-  font-size:13px;
-  letter-spacing:2px;
-}
+nav h2{color:#fff}
+nav ul{list-style:none;display:flex;gap:30px}
+nav li{color:#fff;font-size:13px;letter-spacing:2px}
 
-/* ================= HERO ================= */
+/* HERO */
 .hero{
   height:100vh;
+  background:url('https://images.unsplash.com/photo-1606216794074-735e91aa2c92') center/cover;
   position:relative;
-  overflow:hidden;
-}
-.hero video{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
 }
 .hero::after{
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.45);
+  background:rgba(0,0,0,.55);
 }
 .hero-content{
   position:relative;
@@ -111,73 +65,41 @@ nav ul li{
 }
 .hero-content span{
   font-family:'Great Vibes',cursive;
-  font-size:42px;
-  color:#c9a44b;
+  font-size:46px;
+  color:#d4af37;
 }
 .hero-content h1{
-  font-size:70px;
-  letter-spacing:3px;
+  font-size:72px;
   margin:10px 0;
 }
 .hero-content p{
-  max-width:650px;
-  font-size:15px;
-  letter-spacing:1px;
-  margin-bottom:40px;
+  max-width:700px;
+  font-size:16px;
 }
 
-/* ================= ABOUT ================= */
+/* ABOUT */
 .about{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
+  gap:70px;
 }
-.about h2{
-  font-size:48px;
-  margin-bottom:20px;
-}
-.about p{
-  line-height:1.9;
-  margin-bottom:20px;
-}
+.about h2{font-size:52px;margin-bottom:20px}
 
-/* ================= SERVICES ================= */
-.services{
-  background:#111;
-  color:#fff;
-}
-.services h2{
-  text-align:center;
-  font-size:52px;
-  margin-bottom:70px;
-}
-.service-grid{
+/* IMAGE GRID */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
-.service{
-  border:1px solid rgba(255,255,255,.15);
-  padding:40px;
-  transition:.4s;
-}
-.service:hover{
-  background:#000;
-  transform:translateY(-10px);
-}
-.service h3{
-  font-size:26px;
-  margin-bottom:15px;
-}
-.service p{
-  font-size:14px;
-  line-height:1.8;
+.grid img{
+  height:420px;
+  object-fit:cover;
+  box-shadow:0 25px 50px rgba(0,0,0,.15);
 }
 
-/* ================= CINEMATIC STRIP ================= */
+/* STRIP */
 .strip{
-  height:60vh;
+  height:70vh;
   background:url('https://images.unsplash.com/photo-1520857014576-2c4f4c972b57') center/cover fixed;
   position:relative;
 }
@@ -185,198 +107,136 @@ nav ul li{
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.55);
+  background:rgba(0,0,0,.6);
 }
-.strip-content{
+.strip h2{
   position:relative;
   z-index:2;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
   color:#fff;
-}
-.strip-content h2{
-  font-size:58px;
+  text-align:center;
+  font-size:60px;
+  top:50%;
+  transform:translateY(-50%);
 }
 
-/* ================= INSTAGRAM ================= */
-.insta h2{
-  text-align:center;
-  font-size:50px;
-  margin-bottom:60px;
-}
-.insta-grid{
+/* SERVICES */
+.services{background:#111;color:#fff}
+.services h2{text-align:center;font-size:54px;margin-bottom:70px}
+.service-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:35px;
-}
-.instagram-media{
-  box-shadow:0 30px 60px rgba(0,0,0,.12);
-  border-radius:10px;
-}
-
-/* ================= TESTIMONIALS ================= */
-.testimonials{
-  background:#f6f6f6;
-}
-.testimonials h2{
-  text-align:center;
-  font-size:48px;
-  margin-bottom:70px;
-}
-.test-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:40px;
 }
-.test{
-  background:#fff;
+.service{
+  border:1px solid rgba(255,255,255,.2);
   padding:40px;
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
-}
-.test p{
-  font-size:14px;
-  line-height:1.9;
-  margin-bottom:20px;
-}
-.test h4{
-  letter-spacing:2px;
 }
 
-/* ================= CONTACT ================= */
+/* BIG GALLERY */
+.big-gallery img{
+  height:500px;
+  object-fit:cover;
+}
+
+/* CONTACT */
 .contact{
-  background:#111;
+  background:#000;
   color:#fff;
   text-align:center;
 }
-.contact h2{
-  font-size:48px;
-  margin-bottom:30px;
-}
-.contact p{
-  margin-bottom:20px;
-}
-.contact a{
-  display:block;
-  margin:10px 0;
-  letter-spacing:2px;
-}
+.contact h2{font-size:52px;margin-bottom:20px}
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer{
   background:#000;
   color:#aaa;
-  padding:40px;
   text-align:center;
-  font-size:13px;
-  letter-spacing:1px;
+  padding:40px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 @media(max-width:900px){
-  .about{grid-template-columns:1fr;}
-  .hero-content h1{font-size:46px;}
+  .about{grid-template-columns:1fr}
+  .hero-content h1{font-size:46px}
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="logo">CINEWED STUDIO</div>
-  <ul>
-    <li>HOME</li>
-    <li>ABOUT</li>
-    <li>SERVICES</li>
-    <li>WORK</li>
-    <li>CONTACT</li>
-  </ul>
+<h2>CINEWED STUDIO</h2>
+<ul>
+<li>Home</li>
+<li>About</li>
+<li>Work</li>
+<li>Services</li>
+<li>Contact</li>
+</ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <video autoplay muted loop>
-    <source src="https://cdn.coverr.co/videos/coverr-wedding-couple-4737/1080p.mp4" type="video/mp4">
-  </video>
-  <div class="hero-content">
-    <span>cinematic wedding films</span>
-    <h1>YOUR LOVE, OUR CINEMA</h1>
-    <p>we craft luxury wedding films with emotion, storytelling and cinematic depth that lives forever</p>
-    <a class="btn" href="#">book your date</a>
-  </div>
+<div class="hero-content">
+<span>Cinematic Wedding Films</span>
+<h1>Your Love, Our Cinema</h1>
+<p>Luxury Indian wedding films crafted with emotion, storytelling and cinematic depth.</p>
+</div>
 </section>
 
-<!-- ABOUT -->
 <section class="about">
-  <div>
-    <h2>about cinewed</h2>
-    <p>CineWed Studio is a premium cinematic wedding film studio based in Bihar. We specialize in emotional storytelling, luxury visuals and timeless frames.</p>
-    <p>Every wedding is unique. Our films are not just videos — they are memories designed like cinema.</p>
-  </div>
-  <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+<div>
+<h2>About CineWed</h2>
+<p>CineWed Studio Is A Premium Cinematic Wedding Film Brand Based In Bihar. We Believe Every Wedding Is A Story Worth Filming Like A Movie.</p>
+<p>We Focus On Real Emotions, Grand Visuals And Timeless Storytelling.</p>
+</div>
+<img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff">
 </section>
 
-<!-- SERVICES -->
-<section class="services">
-  <h2>our services</h2>
-  <div class="service-grid">
-    <div class="service"><h3>Cinematic Wedding Film</h3><p>story-driven wedding movies with cinematic grading</p></div>
-    <div class="service"><h3>Pre Wedding Films</h3><p>luxury pre-wedding shoots with concepts & direction</p></div>
-    <div class="service"><h3>Wedding Photography</h3><p>editorial style premium photography</p></div>
-    <div class="service"><h3>Reels & Highlights</h3><p>instagram-ready cinematic reels</p></div>
-  </div>
+<section>
+<h2 style="text-align:center;font-size:54px;margin-bottom:60px">Wedding Moments</h2>
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2">
+<img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92">
+<img src="https://images.unsplash.com/photo-1601482441062-b9f13131f33a">
+<img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9">
+<img src="https://images.unsplash.com/photo-1600359746315-119f7b52b21c">
+<img src="https://images.unsplash.com/photo-1601482441057-1d3c5b3f35a2">
+</div>
 </section>
 
-<!-- STRIP -->
 <div class="strip">
-  <div class="strip-content">
-    <h2>we don’t shoot weddings<br>we create cinema</h2>
-  </div>
+<h2>We Do Not Shoot Weddings<br>We Create Cinema</h2>
 </div>
 
-<!-- INSTAGRAM -->
-<section class="insta">
-<h2>instagram stories</h2>
-<div class="insta-grid">
-
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DSNAufvkmBA/" data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DRymMrLksAK/" data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPqgxLPkv_u/" data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DOquZ0cEucg/" data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DNuqCi25FSO/" data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DNnWB6iy_39/" data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK9wgwVSteS/" data-instgrm-version="14"></blockquote>
-
+<section class="services">
+<h2>Our Services</h2>
+<div class="service-grid">
+<div class="service"><h3>Cinematic Wedding Films</h3><p>Emotion Driven Feature Length Wedding Movies.</p></div>
+<div class="service"><h3>Pre Wedding Shoots</h3><p>Concept Based Luxury Pre Wedding Films.</p></div>
+<div class="service"><h3>Photography</h3><p>Editorial And Candid Wedding Photography.</p></div>
+<div class="service"><h3>Instagram Reels</h3><p>High Impact Cinematic Reels For Social Media.</p></div>
 </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-<h2>words from couples</h2>
-<div class="test-grid">
-<div class="test"><p>“this film made us cry. pure cinema.”</p><h4>— bride & groom</h4></div>
-<div class="test"><p>“best wedding decision we made.”</p><h4>— happy couple</h4></div>
-<div class="test"><p>“luxury, emotion & perfection.”</p><h4>— client</h4></div>
+<section class="big-gallery">
+<h2 style="text-align:center;font-size:54px;margin-bottom:60px">Grand Celebrations</h2>
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1542044896530-05d85be9b11f">
+<img src="https://images.unsplash.com/photo-1520857014576-2c4f4c972b57">
+<img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65">
+<img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a">
 </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact">
-<h2>book your wedding</h2>
-<p>bharatkhand, bihar</p>
-<a href="tel:9934070091">📞 9934070091</a>
-<a href="tel:7319933202">📞 7319933202</a>
+<h2>Book Your Wedding</h2>
+<p>Bharatkhand, Bihar</p>
+<p>Phone: 9934070091 | 7319933202</p>
 </section>
 
 <footer>
-© 2026 CINEWED STUDIO • CINEMATIC WEDDING FILMS
+© 2026 CineWed Studio • Cinematic Wedding Films
 </footer>
-
-<script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
 </html>
